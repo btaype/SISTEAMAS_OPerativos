@@ -8,11 +8,13 @@
 main()
 {
     char c;
-    int shmid;
+    int shmid, con=0;
     key_t key;
     char *shm, *s;
+    char aux[30];
 
-   
+    for(int i=0;i<30;i++) aux[i]='\0';
+
     key = 5678;
 
     
@@ -28,17 +30,25 @@ main()
     }
 
     
-    s = shm;
-    *s='#';
-    *(s+1)='(';
-    putchar(*s);
+    *shm='#';
+    *(shm+1)='(';
     
     while (1){
         
-        if((*s!='#' && *s!='$' && *s!='%' ) && *(s+1)==')' ){
-            
-           putchar(*s);
-           *(s+1)='('; 
+        if((*shm!='#' && *shm!='$' && *shm!='%' ) && *(shm+1)==')' ){
+            //printf("ok\n");
+            //strcpy(aux,shm);
+            aux[con]=*shm;
+
+            if(con<30)
+                con++;
+            else
+                con=0;
+
+           for(int i=0;i<30;i++) printf("%s",&aux[i]);
+           printf("\n");
+           //putchar(*shm);
+           *(shm+1)='('; 
         }
         sleep(2);
     }
