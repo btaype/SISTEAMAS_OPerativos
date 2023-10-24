@@ -27,15 +27,23 @@ main()
         exit(1);
     }
 
-    s=shm;
+ 
     char f='a';
     while(1){
-        if (*s=='%'){
-            *s=f;
+        if (*shm=='%'){
+            *shm=f;
+            *(shm+1)=')';
             sleep(2);
             f=f+1;
-            *(s+1)=')';
-            *s='#';
+            while(1){
+                if (*(shm+1)=='('){
+                    *shm='#';
+                    break;
+                }
+            }
+        }
+         else if (*shm=='+'){
+            exit(1);
         }
 
     }

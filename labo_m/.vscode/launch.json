@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/laboratorio_SI/labo_m",
-      "program": "e:/laboratorio_SI/labo_m/build/Debug/outDebug",
+      "cwd": "e:/laboratorio_SI/SISTEAMAS_OPerativos/labo_m",
+      "program": "e:/laboratorio_SI/SISTEAMAS_OPerativos/labo_m/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

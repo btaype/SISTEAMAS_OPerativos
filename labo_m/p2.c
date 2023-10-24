@@ -27,17 +27,27 @@ main()
         exit(1);
     }
 
-    s=shm;
-    printf("dedo");
+    
+    
     char f='1';
     while(1){
-        if (*s=='#'){
+        if (*shm=='#'){
             
-            *s=f;
-            *(s+1)=')';
+            *shm=f;
+            
+            *(shm+1)=')';
             sleep(2);
             f=f+2;
-            *s='$';
+            while(1){
+                if (*(shm+1)=='('){
+                    *shm='$';
+                    break;
+                }
+            }
+            
+        }
+        else if (*shm=='+'){
+            exit(1);
         }
 
     }
